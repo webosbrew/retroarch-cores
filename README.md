@@ -17,6 +17,7 @@ Current build status:
 	bsnes2014_balanced bsnes2014_performance bsnes_mercury_accuracy
 	bsnes_mercury_balanced bsnes_mercury_performance mame pcsx_rearmed
 	bnes
+ 
 12 core(s) failed:
    desmume mednafen_snes mame2015 mame2016 emux_chip8 emux_gb emux_nes
    emux_sms ffmpeg ppsspp testgl test
