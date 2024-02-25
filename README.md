@@ -24,3 +24,40 @@ Current build status:
 
 Manually built:
    mednafen_snes
+
+TBD:
+
+desmume:
+```
+pcap.h not found
+```
+
+mame2015:
+```
+Generating mcs96 source file...
+Cannot read opcodes file src/emu/cpu/mcs96/mcs96ops.lst [invalid mode: 'rU']
+gmake: *** [src/emu/cpu/cpu.mak:1041: obj/emu/cpu/mcs96/mcs96.inc] Error 1
+```
+
+mame2016:
+```
+gmake platform="unix" -j16 CC="arm-webos-linux-gnueabi-gcc" CXX="arm-webos-linux-gnueabi-g++" 
+GCC 12.2.0 detected
+makefile:876: *** Python is not available in path.  Stop.
+```
+
+emux_chip8
+```
+gmake platform="unix" -j16 CC="arm-webos-linux-gnueabi-gcc" CXX="arm-webos-linux-gnueabi-g++" 
+gmake: *** No targets specified and no makefile found.  Stop.
+```
+
+ppspp:
+```
+In file included from ../Common/GPU/Vulkan/VulkanLoader.h:34,
+                 from ../ext/vma/vk_mem_alloc.cpp:10:
+../ext/vulkan/vulkan.h:58:10: fatal error: X11/Xlib.h: No such file or directory
+   58 | #include <X11/Xlib.h>
+      |          ^~~~~~~~~~~~
+compilation terminated.
+```
