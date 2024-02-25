@@ -19,5 +19,8 @@ Current build status:
 	bnes
  
 12 core(s) failed:
-   desmume mednafen_snes mame2015 mame2016 emux_chip8 emux_gb emux_nes
+   desmume mame2015 mame2016 emux_chip8 emux_gb emux_nes
    emux_sms ffmpeg ppsspp testgl test
+
+Manually built:
+   mednafen_snes
