@@ -90,6 +90,7 @@ mednafen_supafaust
 pcem
 pocketcdg
 pokemini
+ppsspp: (need to edit CMakeLists.txt and change USING_X11_VULKAN to OFF, edit config to use -mfloat-abi=softfp -marm -mfpu=neon -mcpu=cortex-a9 -mtune=cortex-a53, then edit ffmpeg/linux_arm.sh to build softfp binaries, rebuild those, then run ./b.sh --gles --libretro)
 sameboy
 sameduck
 smsplus
@@ -202,7 +203,6 @@ scummvm
 snes9x2002
 squirreljme
 pcsx2
-ppsspp (uses cmake, requires X11 libs)
 
 tempgba:
 ```
