@@ -31,6 +31,7 @@
 2025-05-17 151c7373 fbalpha2012_cps2_libretro.so.zip
 2025-05-17 0447b320 fbalpha2012_cps3_libretro.so.zip
 2025-05-17 585e1a3b fbalpha2012_libretro.so.zip
+2024-02-21 ae45bce5 fbneo_libretro.so.zip
 2025-05-17 35baac1d fceumm_libretro.so.zip
 2025-05-17 73256f05 fixgb_libretro.so.zip
 2025-05-17 2978a44a fixnes_libretro.so.zip
@@ -87,9 +88,11 @@
 2025-05-17 f4bc7c02 oberon_libretro.so.zip
 2025-05-17 6108590b opera_libretro.so.zip
 2025-05-17 afdc7ec8 pcem_libretro.so.zip
+2024-02-21 08310b8a pcsx_rearmed_libretro.so.zip
 2025-05-17 2804663e pcsx1_libretro.so.zip
 2025-05-17 3960b9e0 pocketcdg_libretro.so.zip
 2025-05-17 7169de2d pokemini_libretro.so.zip
+2024-02-21 7a511a04 picodrive_libretro.so.zip
 2025-05-17 e754869c prboom_libretro.so.zip
 2025-05-17 6a836f82 prosystem_libretro.so.zip
 2025-05-17 80d6c046 puae2021_libretro.so.zip
