@@ -25,6 +25,21 @@ bk (windows only?)
 bsnes2014_performance
 cannonball
 desmume2015 (needed to alter platform in Makefile.libretro)
+doukutsu
+
+```
+export CC_armv7_unknown_linux_gnueabi=$(SDK_PATH)$/bin/arm-webos-linux-gnueabi-gcc
+
+# for Cargo
+export CARGO_TARGET_ARMV7_UNKNOWN_LINUX_GNUEABI_LINKER=$(SDK_PATH)/arm-webos-linux-gnueabi_sdk-buildroot/bin/arm-webos-linux-gnueabi-gcc
+
+rustup default stable
+rustup target add armv7-unknown-linux-gnueabi
+
+edit Makefile to use it:
+cargo build --target=armv7-unknown-linux-gnueabi
+```
+
 ep128emu
 fbalpha2012
 fbalpha2012_cps1
