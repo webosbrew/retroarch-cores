@@ -1,8 +1,8 @@
-This hosts the cores for retroarch, compiled for webos (armv7).
+**This hosts the cores for retroarch, compiled for webos (armv7).**
 
 Currently based on retroarch 1.21.0. 130 cores built.
 
-Current build status:
+**Current build status:**
 
 52 core(s) successfully processed:
 	bluemsx dosbox snes9x2005 chimerasnes fceumm fmsx gambatte
@@ -15,16 +15,23 @@ Current build status:
 	bsnes2014_balanced bsnes2014_performance bsnes_mercury_accuracy
 	bsnes_mercury_balanced bsnes_mercury_performance
 
-Manually built:
+**Manually built:**
 
 vitaquake2 (needs OPENGL changing to GLES in Makefile)
+
 vice (core has in name x64 so need to check this)
+
 a5200
+
 atari800
+
 bk (windows only?)
 bsnes2014_performance
+
 cannonball
+
 desmume2015 (needed to alter platform in Makefile.libretro)
+
 doukutsu
 
 ```
@@ -41,84 +48,160 @@ cargo build --target=armv7-unknown-linux-gnueabi
 ```
 
 ep128emu
+
 fbalpha2012
+
 fbalpha2012_cps1
+
 fbalpha2012_cps2
+
 fbalpha2012_cps3
+
 fixgb
+
 fixnes
+
 freeintv
+
 frodo
+
 galaxy
+
 gearboy
+
 gearcoleco
+
 gearsystem
+
 genesis_plus_gx_wide
+
 gme
+
 gong (but was a dll)
+
 gpsp
+
 mame2003_midway
+
 mame2003_plus
+
 mednafen_pce
+
 mednafen_saturn
+
 melonds (GLES)
+
 mesen
+
 mrboom
+
 mupen64plus_next (GLES)
+
 np2kai
+
 oberon
+
 puae
+
 puae2021
+
 px68k
+
 quasi88
+
 race
+
 reminiscence
+
 remotejoy
+
 retro8
+
 snes9x2005_plus
+
 stella2014
+
 vemulator
+
 yabasanshiro
+
 dosbox (Makefile.libretro: CXX += -std=c++14)
+
 mednafen_ngp (thinks output is a DLL)
+
 tgbdual (thinks its windows)
+
 vecx (Makefile.libretro: HAS_GLES=1)
+
 opera
+
 mednafen_snes
+
 bnes
+
 2048 (win only?)
+
 bluemsx
+
 bnes
+
 cap32
+
 chailove
+
 chimerasnes
+
 craft
+
 crocods
+
 daphne
+
 dolphin_launcher
+
 dosbox_pure
+
 dosbox_svn
+
 ecwolf
+
 jumpnbump
+
 lowresnx
+
 mednafen_supafaust
+
 pcem
+
 pocketcdg
+
 pokemini
+
 ppsspp: (need to edit CMakeLists.txt and change USING_X11_VULKAN to OFF, edit config to use -mfloat-abi=softfp -marm -mfpu=neon -mcpu=cortex-a9 -mtune=cortex-a53, then edit ffmpeg/linux_arm.sh to build softfp binaries, rebuild those, then run ./b.sh --gles --libretro)
+
 sameboy
+
 sameduck
+
 smsplus
+
 superbroswar
+
 swanstation
+
 tamalibretro
+
 theodore
+
 thepowdertoy
+
 tic80
+
 tyrquake
+
 uw8
 
-Compile errors with bundled GLIBC (in repo, newer GLIBC was used for these):
+**Compile errors with bundled GLIBC (in repo, newer GLIBC was used for these):**
 
 AT_HWCAP2:
 fbneo
@@ -126,7 +209,7 @@ neocd
 picodrive
 pcsx_rearmed
 
-Cores not building requiring more investigation:
+**Cores not building requiring more investigation:**
 
 3dengine (insists on using opengl)
 blastem
