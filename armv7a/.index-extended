@@ -60,6 +60,7 @@
 2025-05-17 910e62d1 mame2003_libretro.so.zip
 2025-05-17 8417ff40 mame2003_midway_libretro.so.zip
 2025-05-17 35ef7fca mame2003_plus_libretro.so.zip
+2025-06-03 c5c16ad2 mame2010_libretro.so.zip
 2025-05-17 def957bc mednafen_gba_libretro.so.zip
 2025-05-17 188f5aa9 mednafen_lynx_libretro.so.zip
 2025-05-17 7aee63e7 mednafen_ngp_libretro.so.zip
@@ -88,6 +89,7 @@
 2025-05-17 fd3b6e5d o2em_libretro.so.zip
 2025-05-17 f4bc7c02 oberon_libretro.so.zip
 2025-05-17 6108590b opera_libretro.so.zip
+2025-06-03 70f3198e parallel_n64_libretro.so.zip
 2025-05-17 afdc7ec8 pcem_libretro.so.zip
 2024-02-21 08310b8a pcsx_rearmed_libretro.so.zip
 2025-05-17 2804663e pcsx1_libretro.so.zip
@@ -107,6 +109,7 @@
 2025-05-17 4feabf94 retro8_libretro.so.zip
 2025-05-17 047a2f08 sameboy_libretro.so.zip
 2025-05-17 42a037ea sameduck_libretro.so.zip
+2025-06-03 9a4d744c scummvm_libretro.so.zip
 2025-05-17 1de507bd smsplus_libretro.so.zip
 2025-05-17 9bbe7b58 snes9x2005_libretro.so.zip
 2025-05-17 9d540d8d snes9x2005_plus_libretro.so.zip
