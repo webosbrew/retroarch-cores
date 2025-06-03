@@ -85,6 +85,31 @@ mame2003_midway
 
 mame2003_plus
 
+mame2010
+
+```
+Apply this patch and compile with _make platform=armv-cortexa9-neon-softfloat_
+
+diff --git a/Makefile b/Makefile
+index e0f8c43..49e66d8 100644
+--- a/Makefile
++++ b/Makefile
+@@ -465,10 +465,12 @@ else ifneq (,$(findstring armv,$(platform)))
+    TARGETLIB := $(TARGET_NAME)_libretro.so
+    SHARED := -shared -Wl,--no-undefined
+    fpic = -fPIC
+-   CC = g++
++#   CC = g++
+    LDFLAGS +=  $(SHARED)
+    ARM_ENABLED = 1
+    X86_SH2DRC = 0
++   FORCE_DRC_C_BACKEND = 1
++   PTR64 = 0
+ ifneq (,$(findstring cortexa8,$(platform)))
+    CCOMFLAGS += -marm -mcpu=cortex-a8
+    ASFLAGS += -mcpu=cortex-a8
+```
+
 mednafen_pce
 
 mednafen_saturn
@@ -101,6 +126,45 @@ np2kai
 
 oberon
 
+parallel_n64
+
+```
+Apply this patch and compile with _make platform=webos_
+
+diff --git a/Makefile b/Makefile
+index bca3454e..fc2885de 100644
+--- a/Makefile
++++ b/Makefile
+@@ -60,6 +60,8 @@ else ifneq (,$(findstring rpi,$(platform)))
+    override platform += unix
+ else ifneq (,$(findstring odroid,$(platform)))
+    override platform += unix
++else ifneq (,$(findstring webos,$(platform)))
++   override platform += unix
+ endif
+
+ # system platform
+@@ -192,7 +194,17 @@ ifneq (,$(findstring unix,$(platform)))
+       endif
+    endif
+
+-
++   # webOS
++   ifneq (,$(findstring webos,$(platform)))
++      GLES = 1
++      GL_LIB := -lGLESv2
++      CPUFLAGS += -DNO_ASM -DARM -D__arm__ -DARM_ASM -D__NEON_OPT -DNOSSE -DARM_FIX
++      CPUFLAGS += -marm -mfloat-abi=softfp
++      HAVE_NEON = 1
++      WITH_DYNAREC=arm
++      CPUFLAGS += -mcpu=cortex-a9 -mfpu=neon
++   endif
++
+    # Classic Platforms ####################
+    # Platform affix = classic_<ISA>_<µARCH>
+    # Help at https://modmyclassic.com/comp
+```
+
 puae
 
 puae2021
@@ -116,6 +180,25 @@ reminiscence
 remotejoy
 
 retro8
+
+scummvm
+
+```
+Apply this patch:
+
+diff --git a/backends/platform/libretro/scripts/configure_engines.sh b/backends/platform/libretro/scripts/configure_engines.sh
+index b04e2520..4b9b1691 100755
+--- a/backends/platform/libretro/scripts/configure_engines.sh
++++ b/backends/platform/libretro/scripts/configure_engines.sh
+@@ -108,7 +108,7 @@ for comp in $(get_var _components); do
+ done
+
+ # Create needed engines build files
+-awk -f "engines.awk" < /dev/null > /dev/null 2>&1
++awk -f "${SCUMMVM_PATH}/engines.awk" < /dev/null > /dev/null 2>&1
+
+ mkdir -p "engines"
+```
 
 snes9x2005_plus
 
@@ -249,13 +332,6 @@ jaxe
 kronos
 mame
 
-mame2010
-```
-error: size ‘-3’ of array ‘your_ptr64_flag_is_wrong’ is negative
-needs  -Wno-error=narrowing
-then fails with arm-webos-linux-gnueabi/bin/ld: obj/libexpat.a: error adding symbols: archive has no index; run ranlib to add one
-```
-
 dinothawr:
 ```
 s16_to_float.c:(.text+0x8c): undefined reference to `convert_s16_float_asm'
@@ -283,10 +359,6 @@ openlara:
 collect2: error: ld returned 1 exit status
 gmake: *** [Makefile:209: openlara_libretro.so] Error 1
 ```
-parallel_n64:
-```
-s16_to_float.c:(.text+0x1f8): undefined reference to `convert_s16_float_asm'
-```
 parallext:
 ```
 s16_to_float.c:(.text+0x1c0): undefined reference to `convert_s16_float_asm'
@@ -297,7 +369,6 @@ samecdi
 ```
 3rdparty/genie/bin/linux/genie: 1: Syntax error: word unexpected (expecting ")")
 ```
-scummvm
 snes9x2002
 squirreljme
 pcsx2
