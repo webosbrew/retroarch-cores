@@ -406,3 +406,10 @@ arm-webos-linux-gnueabi/bin/ld: unrecognized option '--export-all-symbols'
 
 xrick
 vitaquake3 (needs GL)
+
+**Developer note**:
+To generate .index-extended use this script (for new cores only) and add to the existing .index-extended:
+
+```
+for f in *.zip ; do echo "$(stat -c '%y' $f | cut -f 1 -d ' ') $(crc32 $f) $f"; done > .index-extended
+```
