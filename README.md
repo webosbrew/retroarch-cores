@@ -45,6 +45,8 @@ rustup target add armv7-unknown-linux-gnueabi
 
 edit Makefile to use it:
 cargo build --target=armv7-unknown-linux-gnueabi
+
+must rename core to doukutsu_rs_libretro.so
 ```
 
 ep128emu
@@ -240,8 +242,6 @@ crocods
 
 daphne
 
-dolphin_launcher
-
 dosbox_pure
 
 dosbox_svn
@@ -313,11 +313,16 @@ libretro-desmume/desmume/src/frontend/libretro
 ```
 ffmpeg: needs GL
 
-dolphin:
+dolphin/:
+Need a 64-bit compile which is feasible however there would be no graphics as graphics libs provided
+by LG are 32-bit only.
 ```
 You're building on an unsupported platform: 'armv7l' with 4-byte pointers.
   Enable generic build if you really want a JIT-less binary.
 ```
+
+dolphin_launcher: (removed as pointless without dolphin)
+
 dosbox_core:
 ```
 checking whether we are cross compiling... configure: error: in `libretro-super/libretro-dosbox_core/libretro/deps_bin/flac_build'
