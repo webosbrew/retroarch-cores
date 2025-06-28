@@ -334,6 +334,16 @@ easyrpg
 flycast
 fsuae
 hbmame
+
+holani:
+```
+error: linking with `cc` failed: exit status: 1
+  |
+  = note:  "cc" "-Wl,--version-script=/tmp/rustcylV6Sl/list" "-Wl,--no-undefined-version" "/tmp/rustcylV6Sl/symbols.o" "<49 object files omitted>" "-Wl,--as-needed" "-Wl,-Bstatic" "<sysroot>/lib/rustlib/armv7-unknown-linux-gnueabi/lib/{libcompiler_builtins-*}.rlib" "-Wl,-Bdynamic" "-lgcc_s" "-lutil" "-lrt" "-lpthread" "-lm" "-ldl" "-lc" "-L" "/tmp/rustcylV6Sl/raw-dylibs" "-Wl,--eh-frame-hdr" "-Wl,-z,noexecstack" "-L" "<sysroot>/lib/rustlib/armv7-unknown-linux-gnueabi/lib" "-o" "/home/xx/Developer/libretro-super/libretro-holani/target/armv7-unknown-linux-gnueabi/release/deps/libholani.so" "-Wl,--gc-sections" "-shared" "-Wl,-z,relro,-z,now" "-Wl,-O1" "-Wl,--strip-debug" "-nodefaultlibs"
+  = note: some arguments are omitted. use `--verbose` to show all linker arguments
+  = note: /usr/bin/ld: /home/xx/Developer/libretro-super/libretro-holani/target/armv7-unknown-linux-gnueabi/release/deps/holani.7kdhjmn7okn82er0zxbk2way8.rcgu.o: relocations in generic ELF (EM: 40)
+```
+
 ishiiruka
 jaxe
 kronos
