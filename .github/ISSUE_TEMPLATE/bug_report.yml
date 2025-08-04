@@ -1,0 +1,40 @@
+name: Bug Report
+description: File a bug report for retroarch-cores
+title: "[Bug] <brief description>"
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for reporting a bug in retroarch-cores! Please fill out the details below so we can help you faster.
+
+  - type: input
+    id: webos-version
+    attributes:
+      label: webOS Version
+      placeholder: e.g. 5.5.0 (or Settings > General > About TV)
+
+  - type: input
+    id: model-number
+    attributes:
+      label: Device Model Number
+      placeholder: e.g. OLED55CXPTA
+
+  - type: textarea
+    id: issue-description
+    attributes:
+      label: Describe the issue
+      description: Include steps to reproduce, expected behavior, and actual behavior.
+      placeholder: e.g. RetroArch crashes on launching SNES core...
+
+  - type: textarea
+    id: log-info
+    attributes:
+      label: Optional Log Output
+      description: If possible, please include logs from `/media/developer/apps/usr/palm/applications/com.retroarch.webos/retroarch.log` or other relevant system logs to help with debugging.
+      placeholder: Paste relevant log snippets here
+
+  - type: markdown
+    attributes:
+      value: |
+        You can attach files after submitting the issue, or use [Pastebin](https://pastebin.com/) / [Gist](https://gist.github.com/) for larger logs.

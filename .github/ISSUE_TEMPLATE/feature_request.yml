@@ -1,0 +1,43 @@
+name: Feature Request / Other
+description: Suggest a new feature or provide general feedback
+title: "[Feature] <suggestion summary>"
+labels: [enhancement]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Got an idea or improvement for retroarch-cores? We'd love to hear it!
+
+  - type: dropdown
+    id: request-type
+    attributes:
+      label: Type of Request
+      options:
+        - New emulator core
+        - Compatibility enhancement
+        - General suggestion
+        - Other
+
+  - type: textarea
+    id: feature-details
+    attributes:
+      label: Request Details
+      description: Please describe what you'd like to see added or changed.
+      placeholder: e.g. Add support for Sega Saturn games using Yabause core...
+
+  - type: input
+    id: webos-version
+    attributes:
+      label: webOS Version (optional)
+      placeholder: e.g. 5.5.0
+
+  - type: input
+    id: model-number
+    attributes:
+      label: Model Number (optional)
+      placeholder: e.g. OLED55CXPTA
+
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for helping improve retroarch-cores! 🙏 We review all feature requests, but not all may be feasible to implement. Keep the ideas coming!
