@@ -1,6 +1,6 @@
 name: Feature Request / Other
 description: Suggest a new feature or provide general feedback
-title: "[Feature] <suggestion summary>"
+title: "[Feature] "
 labels: [enhancement]
 body:
   - type: markdown
