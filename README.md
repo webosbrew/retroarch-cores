@@ -15,6 +15,10 @@ Currently based on retroarch 1.21.0. 130 cores built.
 	bsnes2014_balanced bsnes2014_performance bsnes_mercury_accuracy
 	bsnes_mercury_balanced bsnes_mercury_performance
 
+**Built with new ./libretro-build-webos.sh**
+parallel_n64
+unx
+
 **Manually built:**
 
 vitaquake2 (needs OPENGL changing to GLES in Makefile)
@@ -128,45 +132,6 @@ np2kai
 
 oberon
 
-parallel_n64
-
-```
-Apply this patch and compile with _make platform=webos_
-
-diff --git a/Makefile b/Makefile
-index bca3454e..fc2885de 100644
---- a/Makefile
-+++ b/Makefile
-@@ -60,6 +60,8 @@ else ifneq (,$(findstring rpi,$(platform)))
-    override platform += unix
- else ifneq (,$(findstring odroid,$(platform)))
-    override platform += unix
-+else ifneq (,$(findstring webos,$(platform)))
-+   override platform += unix
- endif
-
- # system platform
-@@ -192,7 +194,17 @@ ifneq (,$(findstring unix,$(platform)))
-       endif
-    endif
-
--
-+   # webOS
-+   ifneq (,$(findstring webos,$(platform)))
-+      GLES = 1
-+      GL_LIB := -lGLESv2
-+      CPUFLAGS += -DNO_ASM -DARM -D__arm__ -DARM_ASM -D__NEON_OPT -DNOSSE -DARM_FIX
-+      CPUFLAGS += -marm -mfloat-abi=softfp
-+      HAVE_NEON = 1
-+      WITH_DYNAREC=arm
-+      CPUFLAGS += -mcpu=cortex-a9 -mfpu=neon
-+   endif
-+
-    # Classic Platforms ####################
-    # Platform affix = classic_<ISA>_<µARCH>
-    # Help at https://modmyclassic.com/comp
-```
-
 puae
 
 puae2021
@@ -182,8 +147,6 @@ reminiscence
 remotejoy
 
 retro8
-
-unx
 
 scummvm
 
