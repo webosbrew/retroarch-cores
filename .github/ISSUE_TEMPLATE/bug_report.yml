@@ -11,9 +11,9 @@ body:
   - type: input
     id: retroarch
     attributes:
-      label: RetroArch
+      label: RetroArch version
       description: Version of RetroArch used
-      placeholder: e.g. 1.16.0
+      placeholder: e.g. 1.21.0
     validations:
       required: true
 
