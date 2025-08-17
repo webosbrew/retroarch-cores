@@ -8,23 +8,23 @@ body:
       value: |
         Thank you for reporting a bug in retroarch-cores! Please fill out the details below so we can help you faster.
 
-- type: input
-  id: retroarch
-  attributes:
-    label: RetroArch
-    description: Version of RetroArch used
-    placeholder: e.g. 1.21.0
-  validations:
-    required: true
+  - type: input
+    id: retroarch
+    attributes:
+      label: RetroArch
+      description: Version of RetroArch used
+      placeholder: e.g. 1.16.0
+    validations:
+      required: true
 
-- type: input
-  id: core
-  attributes:
-    label: Core
-    description: Name of the core exhibiting the issue
-    placeholder: e.g. snes9x
-  validations:
-    required: true
+  - type: input
+    id: core
+    attributes:
+      label: Core
+      description: Name of the core exhibiting the issue
+      placeholder: e.g. snes9x
+    validations:
+      required: true
     
   - type: input
     id: webos-version
