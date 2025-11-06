@@ -1,8 +1,20 @@
-**This hosts the cores for retroarch, compiled for webos (armv7).**
+# RetroArch WebOS Cores (ARMv7)
 
-Currently based on retroarch 1.21.0. 130 cores built.
+This repository hosts RetroArch cores compiled for WebOS (armv7).  
+Currently based on RetroArch **1.21.0** with over **130 cores built**.
 
-**Current build status:**
+---
+
+## Table of Contents
+- [Built with Script](#built-with-script)
+- [Built with webOS Script](#built-with-webos-script)
+- [Manual Builds](#manual-builds)
+- [Compile Errors (GLIBC Bundled)](#compile-errors-glibc-bundled)
+- [Cores Needing Investigation](#cores-needing-investigation)
+- [Developer Notes](#developer-notes)
+
+## Built with Script
+Built using `./libretro-build.sh`:
 
 52 core(s) successfully processed:
 	bluemsx dosbox snes9x2005 chimerasnes fceumm fmsx gambatte
@@ -15,11 +27,16 @@ Currently based on retroarch 1.21.0. 130 cores built.
 	bsnes2014_balanced bsnes2014_performance bsnes_mercury_accuracy
 	bsnes_mercury_balanced bsnes_mercury_performance
 
-**Built with new ./libretro-build-webos.sh**
-parallel_n64
-unx
+## Built with webOS Script
+Built using `./libretro-build-webos.sh`:
 
-**Manually built:**
+- parallel_n64
+- unx
+
+## Manual Builds
+Some cores required manual compilation (e.g. using make, cmake etc.):
+
+BennuGD_libretro
 
 vitaquake2 (needs OPENGL changing to GLES in Makefile)
 
@@ -249,7 +266,7 @@ tyrquake
 
 uw8
 
-**Compile errors with bundled GLIBC (in repo, newer GLIBC was used for these):**
+## Compile Errors (GLIBC Bundled)
 
 AT_HWCAP2:
 fbneo
@@ -257,7 +274,7 @@ neocd
 picodrive
 pcsx_rearmed
 
-**Cores not building requiring more investigation:**
+## Cores Needing Investigation
 
 3dengine (insists on using opengl)
 blastem
@@ -382,9 +399,11 @@ arm-webos-linux-gnueabi/bin/ld: unrecognized option '--export-all-symbols'
 xrick
 vitaquake3 (needs GL)
 
-**Developer note**:
+## Developer Notes
+
 To generate .index-extended use this script (for new cores only) and add to the existing .index-extended:
 
 ```
+zip archive_name.zip file_to_compress
 for f in *.zip ; do echo "$(stat -c '%y' $f | cut -f 1 -d ' ') $(crc32 $f) $f"; done > .index-extended
 ```
