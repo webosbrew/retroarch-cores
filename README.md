@@ -32,6 +32,7 @@ Built using `./libretro-build-webos.sh`:
 
 - parallel_n64
 - unx
+- scummvm (pending PR)
 
 ## Manual Builds
 Some cores required manual compilation (e.g. using make, cmake etc.):
@@ -165,7 +166,7 @@ remotejoy
 
 retro8
 
-scummvm
+scummvm (patch below pending PR)
 
 ```
 Apply this patch:
