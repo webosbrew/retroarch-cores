@@ -32,7 +32,7 @@ Built using `./libretro-build-webos.sh`:
 
 - parallel_n64
 - unx
-- scummvm (pending PR)
+- scummvm
 
 ## Manual Builds
 Some cores required manual compilation (e.g. using make, cmake etc.):
@@ -166,24 +166,7 @@ remotejoy
 
 retro8
 
-scummvm (patch below pending PR)
-
-```
-Apply this patch:
-
-diff --git a/backends/platform/libretro/scripts/configure_engines.sh b/backends/platform/libretro/scripts/configure_engines.sh
-index b04e2520..4b9b1691 100755
---- a/backends/platform/libretro/scripts/configure_engines.sh
-+++ b/backends/platform/libretro/scripts/configure_engines.sh
-@@ -108,7 +108,7 @@ for comp in $(get_var _components); do
- done
-
- # Create needed engines build files
--awk -f "engines.awk" < /dev/null > /dev/null 2>&1
-+awk -f "${SCUMMVM_PATH}/engines.awk" < /dev/null > /dev/null 2>&1
-
- mkdir -p "engines"
-```
+scummvm
 
 snes9x2005_plus
 
@@ -304,7 +287,7 @@ You're building on an unsupported platform: 'armv7l' with 4-byte pointers.
   Enable generic build if you really want a JIT-less binary.
 ```
 
-dolphin_launcher: (removed as pointless without dolphin)
+dolphin_launcher: (removed as launches standalone dolphin which is not supported)
 
 dosbox_core:
 ```
@@ -405,6 +388,7 @@ vitaquake3 (needs GL)
 To generate .index-extended use this script (for new cores only) and add to the existing .index-extended:
 
 ```
+arm-webos-linux-gnueabi-strip file_to_strip
 zip archive_name.zip file_to_compress
 for f in *.zip ; do echo "$(stat -c '%y' $f | cut -f 1 -d ' ') $(crc32 $f) $f"; done > .index-extended
 ```
