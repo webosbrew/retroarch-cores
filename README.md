@@ -33,13 +33,12 @@ Built using `./libretro-build-webos.sh`:
 - parallel_n64
 - unx
 - scummvm
+- vitaquake2 (PR pending)
 
 ## Manual Builds
 Some cores required manual compilation (e.g. using make, cmake etc.):
 
 BennuGD_libretro
-
-vitaquake2 (needs OPENGL changing to GLES in Makefile)
 
 vice (core has in name x64 so need to check this)
 
@@ -253,7 +252,7 @@ uw8
 ## Compile Errors (GLIBC Bundled)
 
 AT_HWCAP2:
-fbneo
+fbneo (PR pending to glibc/buildroot-nc4)
 neocd
 picodrive
 pcsx_rearmed
