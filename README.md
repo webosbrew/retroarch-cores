@@ -34,6 +34,7 @@ Built using `./libretro-build-webos.sh`:
 - unx
 - scummvm
 - vitaquake2 (PR pending)
+- fbneo
 
 ## Manual Builds
 Some cores required manual compilation (e.g. using make, cmake etc.):
