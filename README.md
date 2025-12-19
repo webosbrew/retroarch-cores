@@ -1,7 +1,7 @@
 # RetroArch WebOS Cores (ARMv7)
 
 This repository hosts RetroArch cores compiled for WebOS (armv7).  
-Currently based on RetroArch **1.21.0** with over **130 cores built**.
+Currently rebuilt on December 2025 with over **130 cores built**.
 
 ---
 
@@ -9,69 +9,159 @@ Currently based on RetroArch **1.21.0** with over **130 cores built**.
 - [Built with Script](#built-with-script)
 - [Built with webOS Script](#built-with-webos-script)
 - [Manual Builds](#manual-builds)
-- [Compile Errors (GLIBC Bundled)](#compile-errors-glibc-bundled)
 - [Cores Needing Investigation](#cores-needing-investigation)
+- [Cores Not supported](#cores-not-supported)
 - [Developer Notes](#developer-notes)
 
-## Built with Script
-Built using `./libretro-build.sh`:
+## Built with default script
+
+The following cores are built using the standard build script.
+
+`./libretro-build.sh`:
 
 52 core(s) successfully processed:
-	bluemsx dosbox snes9x2005 chimerasnes fceumm fmsx gambatte
-	handy stella nestopia numero nxengine prboom quicknes snes9x2010
-	tyrquake vba_next vecx mgba genesis_plus_gx bsnes_cplusplus98
-	mame2003 mednafen_gba mednafen_lynx mednafen_ngp mednafen_pce_fast
+	2048 bluemsx snes9x2005 chimerasnes clownmdemu fceumm fmsx
+	gambatte handy stella nestopia numero nxengine quicknes snes9x2010
+	tyrquake vba_next mgba genesis_plus_gx bsnes_cplusplus98 mame2003
+	mednafen_gba mednafen_lynx mednafen_ngp mednafen_pce_fast
 	mednafen_supergrafx mednafen_vb mednafen_wswan mu gw prosystem
-	81 fuse lutro tgbdual gpsp o2em opera virtualjaguar snes9x vbam
-	mednafen_pcfx mednafen_psx hatari meteor bsnes2014_accuracy
+	81 fuse lutro tgbdual o2em opera virtualjaguar snes9x vbam
+	mednafen_psx mednafen_snes hatari meteor bsnes2014_accuracy
 	bsnes2014_balanced bsnes2014_performance bsnes_mercury_accuracy
-	bsnes_mercury_balanced bsnes_mercury_performance
+	bsnes_mercury_balanced bsnes_mercury_performance pcsx_rearmed bnes
 
-## Built with webOS Script
+26 core(s) failed:
+   dosbox fbneo prboom vecx gpsp desmume desmume2015 picodrive 3dengine
+   scummvm mednafen_pcfx mednafen_psx_hw yabause mame2010 dinothawr
+   mame2015 mame2016 mame emux_chip8 emux_gb emux_nes emux_sms ffmpeg
+   ppsspp testgl test
+
+## Built with webOS script
 Built using `./libretro-build-webos.sh`:
 
 - parallel_n64
 - unx
 - scummvm
-- vitaquake2 (PR pending)
-- fbneo
+- vitaquake2
+- 3dengine (PR https://github.com/libretro/libretro-3dengine/pull/15)
+- fbneo (PR pending to glibc/buildroot-nc4)
 
 ## Manual Builds
 Some cores required manual compilation (e.g. using make, cmake etc.):
 
-BennuGD_libretro
+2048
 
-vice (core has in name x64 so need to check this)
+BennuGD_libretro
 
 a5200
 
 atari800
 
-bk (windows only?)
+bk
+
+bluemsx
+
+bnes
+
 bsnes2014_performance
+
+bsnes_hd_beta (PR https://github.com/DerKoun/bsnes-hd/pull/141)
 
 cannonball
 
-desmume2015 (needed to alter platform in Makefile.libretro)
+cap32
 
-doukutsu
+chailove
+
+chimerasnes
+
+citra, citra_canary (PR https://github.com/libretro/citra/pull/133)
+
+citra2018 (PR https://github.com/libretro/citra2018/pull/8)
+
+craft (PR https://github.com/libretro/Craft/pull/42)
+
+crocods
+
+daphne (PR https://github.com/libretro/daphne/pull/51)
+
+desmume2015 (PR https://github.com/libretro/desmume2015/pull/143)
+
+dinothawr (PR merged 12/12/2025)
+
+dosbox_pure
+
+dosbox_svn
+
+dosbox (PR https://github.com/libretro/dosbox-libretro/pull/148)
+
+doukutsu-rs
 
 ```
-export CC_armv7_unknown_linux_gnueabi=$(SDK_PATH)$/bin/arm-webos-linux-gnueabi-gcc
+export CC_armv7_unknown_linux_gnueabi="$SDK_PATH/bin/arm-webos-linux-gnueabi-gcc"
 
 # for Cargo
-export CARGO_TARGET_ARMV7_UNKNOWN_LINUX_GNUEABI_LINKER=$(SDK_PATH)/arm-webos-linux-gnueabi_sdk-buildroot/bin/arm-webos-linux-gnueabi-gcc
+export CARGO_TARGET_ARMV7_UNKNOWN_LINUX_GNUEABI_LINKER="$SDK_PATH/arm-webos-linux-gnueabi_sdk-buildroot/bin/arm-webos-linux-gnueabi-gcc"
 
 rustup default stable
 rustup target add armv7-unknown-linux-gnueabi
 
-edit Makefile to use it:
-cargo build --target=armv7-unknown-linux-gnueabi
+build it:
+cargo build --release --target=armv7-unknown-linux-gnueabi
 
 must rename core to doukutsu_rs_libretro.so
 ```
 
-ep128emu
+ecwolf
+
+emux_chip8 (PR https://github.com/libretro/emux/pull/6)
+
+ffmpeg (PR https://github.com/libretro/RetroArch/pull/18521):
+
+```
+git clone https://github.com/FFmpeg/FFmpeg.git
+./configure \
+          --prefix="/usr" \
+          --pkg-config-flags="--static" \
+          --extra-cflags="-fPIC" \
+          --extra-ldflags="-static" \
+          --enable-static \
+          --disable-shared \
+          --disable-programs \
+          --disable-doc \
+          --disable-debug \
+          --enable-pic \
+          --enable-gpl \
+          --enable-nonfree \
+          --disable-autodetect \
+          --enable-protocol=file \
+          --enable-demuxer=mov,matroska,avi,mp3,aac,ogg,wav,flac \
+          --enable-decoder=mp3,aac,vorbis,flac,h264,hevc,pcm_s16le \
+          --enable-swresample \
+          --enable-swscale \
+          --cross-prefix=arm-webos-linux-gnueabi-
+          --arch=arm
+          --target-os=linux
+```
+
+then make install:
+
+```
+make install DESTDIR=~/Developer/FFmpeg/workspace/ffmpeg-static
+```
+
+then compile the core (Retroarch/cores/libretro-ffmpeg)
+```
+make \
+    STATIC_LINK_FFMPEG=1 \
+    FFMPEG_DIR="~/Developer/FFmpeg/workspace/ffmpeg-static" \
+    FFMPEG_CFLAGS="-I~/Developer/FFmpeg/workspace/ffmpeg-static/include" \
+    FFMPEG_LDFLAGS="$(pkg-config --static --libs libavcodec libavformat libavutil libswresample libswscale)"
+```
+
+flycast (PR https://github.com/flyinghead/flycast/pull/2167)
+
+ep128emu_core
 
 fbalpha2012
 
@@ -99,56 +189,75 @@ gearsystem
 
 genesis_plus_gx_wide
 
-gme
+gme (PR https://github.com/libretro/libretro-gme/pull/38)
 
-gong (but was a dll)
+gong
 
-gpsp
+gpsp (PR https://github.com/libretro/gpsp/pull/278)
 
-mame2003_midway
+jaxe
+
+jumpnbump
+
+lowresnx
+
+mame2003_midway (needs https://github.com/libretro/mame2003_midway/pull/13 merged)
 
 mame2003_plus
 
-mame2010
+mame2010 (PR https://github.com/libretro/mame2010-libretro/pull/166)
 
-```
-Apply this patch and compile with _make platform=armv-cortexa9-neon-softfloat_
-
-diff --git a/Makefile b/Makefile
-index e0f8c43..49e66d8 100644
---- a/Makefile
-+++ b/Makefile
-@@ -465,10 +465,12 @@ else ifneq (,$(findstring armv,$(platform)))
-    TARGETLIB := $(TARGET_NAME)_libretro.so
-    SHARED := -shared -Wl,--no-undefined
-    fpic = -fPIC
--   CC = g++
-+#   CC = g++
-    LDFLAGS +=  $(SHARED)
-    ARM_ENABLED = 1
-    X86_SH2DRC = 0
-+   FORCE_DRC_C_BACKEND = 1
-+   PTR64 = 0
- ifneq (,$(findstring cortexa8,$(platform)))
-    CCOMFLAGS += -marm -mcpu=cortex-a8
-    ASFLAGS += -mcpu=cortex-a8
-```
-
-mednafen_pce
+mednafen_psx_hw (PR https://github.com/libretro/beetle-psx-libretro/pull/937)
 
 mednafen_saturn
 
-melonds (GLES)
+melonds (PR https://github.com/libretro/melonDS/pull/207)
+
+mame2015 (PR submitted, plus waiting on https://github.com/libretro/mame2015-libretro/pull/98)
+
+mame2016 (PR https://github.com/libretro/mame2016-libretro/pull/65)
+
+mednafen_snes
+
+mednafen_supafaust
+
+mednafen_ngp
 
 mesen
 
 mrboom
 
-mupen64plus_next (GLES)
+mupen64plus_next (PR - https://github.com/libretro/mupen64plus-libretro-nx/pull/609)
 
-np2kai
+neocd (PRs https://github.com/openlgtv/buildroot-nc4/pull/62 and https://github.com/libretro/neocd_libretro/pull/97)
+
+np2kai (PR - https://github.com/libretro/NP2kai/pull/63)
 
 oberon
+
+opera
+
+pcsx_rearmed (PR https://github.com/openlgtv/buildroot-nc4/pull/62)
+
+picodrive (PRs https://github.com/openlgtv/buildroot-nc4/pull/62 and https://github.com/libretro/picodrive/pull/259)
+
+pocketcdg
+
+pokemini
+
+ppsspp: (PR https://github.com/hrydgard/ppsspp/pull/21071 and https://github.com/hrydgard/ppsspp-ffmpeg/pull/77)
+
+prboom (PR https://github.com/libretro/libretro-prboom/pull/199)
+
+sameboy
+
+sameduck
+
+smsplus
+
+superbroswar (https://github.com/libretro/superbroswar-libretro/issues/14)
+
+swanstation
 
 puae
 
@@ -172,73 +281,9 @@ snes9x2005_plus
 
 stella2014
 
-vemulator
-
-yabasanshiro
-
-dosbox (Makefile.libretro: CXX += -std=c++14)
-
-mednafen_ngp (thinks output is a DLL)
-
-tgbdual (thinks its windows)
-
-vecx (Makefile.libretro: HAS_GLES=1)
-
-opera
-
-mednafen_snes
-
-bnes
-
-2048 (win only?)
-
-bluemsx
-
-bnes
-
-cap32
-
-chailove
-
-chimerasnes
-
-craft
-
-crocods
-
-daphne
-
-dosbox_pure
-
-dosbox_svn
-
-ecwolf
-
-jumpnbump
-
-lowresnx
-
-mednafen_supafaust
-
-pcem
-
-pocketcdg
-
-pokemini
-
-ppsspp: (need to edit CMakeLists.txt and change USING_X11_VULKAN to OFF, edit config to use -mfloat-abi=softfp -marm -mfpu=neon -mcpu=cortex-a9 -mtune=cortex-a53, then edit ffmpeg/linux_arm.sh to build softfp binaries, rebuild those, then run ./b.sh --gles --libretro)
-
-sameboy
-
-sameduck
-
-smsplus
-
-superbroswar
-
-swanstation
-
 tamalibretro
+
+tgbdual
 
 theodore
 
@@ -248,56 +293,38 @@ tic80
 
 tyrquake
 
+vemulator
+
+vice
+
+yabause (PR https://github.com/libretro/yabause/pull/317)
+
+yabasanshiro (PR merged - https://github.com/libretro/yabause/pull/316)
+
+vecx (PR https://github.com/libretro/libretro-vecx/pull/64)
+
 uw8
 
-## Compile Errors (GLIBC Bundled)
-
-AT_HWCAP2:
-fbneo (PR pending to glibc/buildroot-nc4)
-neocd
-picodrive
-pcsx_rearmed
+xrick (PR https://github.com/libretro/xrick-libretro/pull/29)
 
 ## Cores Needing Investigation
 
-3dengine (insists on using opengl)
-blastem
-boom3 (needs GL)
-bsnes_hd_beta
+desmume: (PR https://github.com/libretro/desmume/pull/121)
 
-citra, citra_canary
 ```
-Makefile.common:446: *** Bad architecture used with libressl: arm.  Stop.
+(also needs libpcap added to buildroot-nc4)
 ```
-
-citra2018 (cmake)
-
-desmume:
-```
-libretro-desmume/desmume/src/frontend/libretro
-(needs libpcap added to buildroot-nc4)
-```
-ffmpeg: needs GL
-
-dolphin/:
-Need a 64-bit compile which is feasible however there would be no graphics as graphics libs provided
-by LG are 32-bit only.
-```
-You're building on an unsupported platform: 'armv7l' with 4-byte pointers.
-  Enable generic build if you really want a JIT-less binary.
-```
-
-dolphin_launcher: (removed as launches standalone dolphin which is not supported)
 
 dosbox_core:
 ```
 checking whether we are cross compiling... configure: error: in `libretro-super/libretro-dosbox_core/libretro/deps_bin/flac_build'
 configure: error: cannot run C compiled programs.
 ```
-easyrpg
-flycast
-fsuae
-hbmame
+easyrpg - needs liblcf?
+
+fsuae (requires glib adding to buildroot-nc4?)
+
+hbmame (broken, old core needs some TLC)
 
 holani:
 ```
@@ -308,27 +335,13 @@ error: linking with `cc` failed: exit status: 1
   = note: /usr/bin/ld: /home/xx/Developer/libretro-super/libretro-holani/target/armv7-unknown-linux-gnueabi/release/deps/holani.7kdhjmn7okn82er0zxbk2way8.rcgu.o: relocations in generic ELF (EM: 40)
 ```
 
-ishiiruka
-jaxe
-kronos
-mame
+mame (PR submitted https://github.com/libretro/mame/pull/543) - but fails linking with:
 
-dinothawr:
 ```
-s16_to_float.c:(.text+0x8c): undefined reference to `convert_s16_float_asm'
+ld: BFD (GNU Binutils) 2.43.1 assertion fail elf32-arm.c:9889
 ```
 
-mame2015
-```
-needs gcc: error: unrecognized command-line option ‘-mstructure-size-boundary=32’ removing from Makefile
-then dies at arm-webos-linux-gnueabi/bin/ld: obj/libexpat.a: error adding symbols: archive has no index; run ranlib to add one
-```
-
-mame2016
-mame:
-both have cross compile detection issues
-
-emux_chip8, gb, nes, sms ? no relevant Makefile
+gb, nes, sms ? no relevant Makefile
 
 neokops
 ```
@@ -372,16 +385,37 @@ video_processor:
 video_processor_v4l2.c:44:10: fatal error: libv4l2.h: No such file or directory
 ```
 
-vitavoyager:
-needs GL
-
 x1:
 ```
 arm-webos-linux-gnueabi/bin/ld: unrecognized option '--export-all-symbols'
 ```
 
-xrick
-vitaquake3 (needs GL)
+## Cores Not Supported
+
+blastem (this is x86 ONLY at present)
+
+boom3 (does not support GLES)
+
+dolphin/:
+Need a 64-bit compile which is feasible however there would be no graphics as graphics libs provided
+by LG are 32-bit only.
+```
+You're building on an unsupported platform: 'armv7l' with 4-byte pointers.
+  Enable generic build if you really want a JIT-less binary.
+```
+
+dolphin_launcher: (removed as launches standalone dolphin which is not currently supported)
+
+ishiiruka (dolphin fork, not planned)
+
+kronos (does not support GLES)
+
+pcem (x86/64 only?)
+
+vitaquake3 (does not support GLES)
+
+vitavoyager:
+does not support GLES
 
 ## Developer Notes
 
