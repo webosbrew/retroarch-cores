@@ -298,6 +298,12 @@ remotejoy
 
 retro8
 
+rustation (https://gitlab.com/flio/rustation-ng/)
+
+```
+cargo build --release --target=armv7-unknown-linux-gnueabi
+```
+
 scummvm
 
 snes9x2002
@@ -336,6 +342,8 @@ vaporspec
 
 xrick (PR https://github.com/libretro/xrick-libretro/pull/29)
 
+x1
+
 ## Cores Needing Investigation
 
 dosbox_core:
@@ -362,8 +370,6 @@ collect2: error: ld returned 1 exit status
 gmake: *** [Makefile:209: openlara_libretro.so] Error 1
 ```
 
-rustation
-
 samecdi
 ```
 3rdparty/genie/bin/linux/genie: 1: Syntax error: word unexpected (expecting ")")
@@ -374,11 +380,6 @@ pcsx2
 video_processor:
 ```
 video_processor_v4l2.c:44:10: fatal error: libv4l2.h: No such file or directory
-```
-
-x1:
-```
-arm-webos-linux-gnueabi/bin/ld: unrecognized option '--export-all-symbols'
 ```
 
 ## Cores Not Supported
