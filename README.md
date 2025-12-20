@@ -107,7 +107,7 @@ doukutsu-rs
 export CC_armv7_unknown_linux_gnueabi="$SDK_PATH/bin/arm-webos-linux-gnueabi-gcc"
 
 # for Cargo
-export CARGO_TARGET_ARMV7_UNKNOWN_LINUX_GNUEABI_LINKER="$SDK_PATH/arm-webos-linux-gnueabi_sdk-buildroot/bin/arm-webos-linux-gnueabi-gcc"
+export CARGO_TARGET_ARMV7_UNKNOWN_LINUX_GNUEABI_LINKER="$SDK_PATH/bin/arm-webos-linux-gnueabi-gcc"
 
 rustup default stable
 rustup target add armv7-unknown-linux-gnueabi
@@ -187,6 +187,14 @@ frodo
 
 galaxy
 
+gb, nes, sms:
+
+```
+make -f Makefile.webos MACHINE=gb
+make -f Makefile.webos MACHINE=nes
+make -f Makefile.webos MACHINE=sms
+```
+
 gearboy
 
 gearcoleco
@@ -200,6 +208,13 @@ gme (PR https://github.com/libretro/libretro-gme/pull/38)
 gong
 
 gpsp (PR https://github.com/libretro/gpsp/pull/278)
+
+holani:
+```
+export CARGO_TARGET_ARMV7_UNKNOWN_LINUX_GNUEABI_LINKER="$SDK_PATH/bin/arm-webos-linux-gnueabi-gcc"
+
+cargo build --release --target=armv7-unknown-linux-gnueabi
+```
 
 jaxe
 
@@ -334,22 +349,11 @@ fsuae (requires glib adding to buildroot-nc4?)
 
 hbmame (broken, old core needs some TLC)
 
-holani:
-```
-error: linking with `cc` failed: exit status: 1
-  |
-  = note:  "cc" "-Wl,--version-script=/tmp/rustcylV6Sl/list" "-Wl,--no-undefined-version" "/tmp/rustcylV6Sl/symbols.o" "<49 object files omitted>" "-Wl,--as-needed" "-Wl,-Bstatic" "<sysroot>/lib/rustlib/armv7-unknown-linux-gnueabi/lib/{libcompiler_builtins-*}.rlib" "-Wl,-Bdynamic" "-lgcc_s" "-lutil" "-lrt" "-lpthread" "-lm" "-ldl" "-lc" "-L" "/tmp/rustcylV6Sl/raw-dylibs" "-Wl,--eh-frame-hdr" "-Wl,-z,noexecstack" "-L" "<sysroot>/lib/rustlib/armv7-unknown-linux-gnueabi/lib" "-o" "/home/xx/Developer/libretro-super/libretro-holani/target/armv7-unknown-linux-gnueabi/release/deps/libholani.so" "-Wl,--gc-sections" "-shared" "-Wl,-z,relro,-z,now" "-Wl,-O1" "-Wl,--strip-debug" "-nodefaultlibs"
-  = note: some arguments are omitted. use `--verbose` to show all linker arguments
-  = note: /usr/bin/ld: /home/xx/Developer/libretro-super/libretro-holani/target/armv7-unknown-linux-gnueabi/release/deps/holani.7kdhjmn7okn82er0zxbk2way8.rcgu.o: relocations in generic ELF (EM: 40)
-```
-
 mame (PR submitted https://github.com/libretro/mame/pull/543) - but fails linking with:
 
 ```
 ld: BFD (GNU Binutils) 2.43.1 assertion fail elf32-arm.c:9889
 ```
-
-gb, nes, sms ? no relevant Makefile
 
 openlara:
 ```

@@ -35,6 +35,9 @@
 2025-12-19 146a5dd4 doukutsu_rs_libretro.so.zip
 2025-12-19 507e23be ecwolf_libretro.so.zip
 2025-12-19 6ee5abf7 emux_chip8_libretro.so.zip
+2025-12-20 ab083fbd emux_gb_libretro.so.zip
+2025-12-20 47e38667 emux_nes_libretro.so.zip
+2025-12-20 2b3a9da3 emux_sms_libretro.so.zip
 2025-12-19 4585cf34 ep128emu_core_libretro.so.zip
 2025-12-19 3ac1f2a6 fbalpha2012_cps1_libretro.so.zip
 2025-12-19 af2e130a fbalpha2012_cps2_libretro.so.zip
@@ -65,6 +68,7 @@
 2025-12-19 e2e1a03e gw_libretro.so.zip
 2025-12-19 34a2aef8 handy_libretro.so.zip
 2025-12-19 e7e78584 hatari_libretro.so.zip
+2025-12-20 231dc95d holani.so.zip
 2025-12-19 6051bd64 jaxe_libretro.so.zip
 2025-12-19 253fad3d jumpnbump_libretro.so.zip
 2025-12-19 855e2360 lowresnx_libretro.so.zip
