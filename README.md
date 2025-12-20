@@ -61,7 +61,7 @@ bk
 
 bluemsx
 
-bnes
+bnes (PR https://github.com/libretro/bsnes-libretro/pull/48)
 
 bsnes2014_performance
 
@@ -84,6 +84,12 @@ craft (PR https://github.com/libretro/Craft/pull/42)
 crocods
 
 daphne (PR https://github.com/libretro/daphne/pull/51)
+
+desmume: (PR https://github.com/libretro/desmume/pull/121)
+
+```
+(also needs libpcap added to buildroot-nc4)
+```
 
 desmume2015 (PR https://github.com/libretro/desmume2015/pull/143)
 
@@ -237,6 +243,8 @@ oberon
 
 opera
 
+parallext (PR https://github.com/libretro/paraLLeXT/pull/5)
+
 pcsx_rearmed (PR https://github.com/openlgtv/buildroot-nc4/pull/62)
 
 picodrive (PRs https://github.com/openlgtv/buildroot-nc4/pull/62 and https://github.com/libretro/picodrive/pull/259)
@@ -277,6 +285,8 @@ retro8
 
 scummvm
 
+snes9x2002
+
 snes9x2005_plus
 
 stella2014
@@ -305,15 +315,13 @@ vecx (PR https://github.com/libretro/libretro-vecx/pull/64)
 
 uw8
 
+uzem
+
+vaporspec
+
 xrick (PR https://github.com/libretro/xrick-libretro/pull/29)
 
 ## Cores Needing Investigation
-
-desmume: (PR https://github.com/libretro/desmume/pull/121)
-
-```
-(also needs libpcap added to buildroot-nc4)
-```
 
 dosbox_core:
 ```
@@ -343,42 +351,21 @@ ld: BFD (GNU Binutils) 2.43.1 assertion fail elf32-arm.c:9889
 
 gb, nes, sms ? no relevant Makefile
 
-neokops
-```
-arm-webos-linux-gnueabi-g++.br_real: error: unrecognized command-line option ‘-mno-ms-bitfields’) and (arm-webos-linux-gnueabi/12.2.0/../../../../arm-webos-linux-gnueabi/bin/ld: cannot find -lwinmm: No such file or directory
-```
 openlara:
 ```
 /arm-webos-linux-gnueabi/bin/ld: ./main.o:(.bss+0xd6c): multiple definition of `__rglgen_glGenVertexArraysOES'; ./libretro-common/glsym/glsym_es2.o:(.bss+0x22c): first defined here
 collect2: error: ld returned 1 exit status
 gmake: *** [Makefile:209: openlara_libretro.so] Error 1
 ```
-parallext:
-```
-s16_to_float.c:(.text+0x1c0): undefined reference to `convert_s16_float_asm'
-```
+
 rustation
 
 samecdi
 ```
 3rdparty/genie/bin/linux/genie: 1: Syntax error: word unexpected (expecting ")")
 ```
-snes9x2002
 squirreljme
 pcsx2
-
-tempgba:
-```
-arm-webos-linux-gnueabi-gcc.br_real: error: unrecognized command-line option ‘-mlong32’
-gmake: *** [Makefile:65: zip.o] Error 1
-```
-
-uzem:
-```
-arm-webos-linux-gnueabi-g++.br_real: error: unrecognized command-line option ‘-mno-ms-bitfields’
-```
-
-vaporspec
 
 video_processor:
 ```
@@ -409,6 +396,12 @@ dolphin_launcher: (removed as launches standalone dolphin which is not currently
 ishiiruka (dolphin fork, not planned)
 
 kronos (does not support GLES)
+
+tempgba (archived, no longer developed, so use gpsp instead):
+```
+arm-webos-linux-gnueabi-gcc.br_real: error: unrecognized command-line option ‘-mlong32’
+gmake: *** [Makefile:65: zip.o] Error 1
+```
 
 pcem (x86/64 only?)
 

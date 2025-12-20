@@ -106,6 +106,7 @@
 2025-12-19 717a5f26 oberon_libretro.so.zip
 2025-12-19 b5cd8ff2 opera_libretro.so.zip
 2025-12-19 73e21040 parallel_n64_libretro.so.zip
+2025-12-20 f0ebe820 parallext_n64_libretro.so.zip
 2025-12-19 aed42e31 pcsx1_libretro.so.zip
 2025-12-19 3b1fd531 pcsx_rearmed_libretro.so.zip
 2025-12-19 104fdc6d picodrive_libretro.so.zip
@@ -127,6 +128,7 @@
 2025-12-19 28866019 sameduck_libretro.so.zip
 2025-12-19 04ff412a scummvm_libretro.so.zip
 2025-12-19 1a27fb93 smsplus_libretro.so.zip
+2025-12-20 a33718eb snes9x2002_libretro.so.zip
 2025-12-19 c12e0485 snes9x2005_libretro.so.zip
 2025-12-19 c57d978b snes9x2005_plus_libretro.so.zip
 2025-12-19 6f587f50 snes9x2010_libretro.so.zip
@@ -143,6 +145,8 @@
 2025-12-19 91414ae5 tyrquake_libretro.so.zip
 2025-12-19 85ce59aa uw8_libretro.so.zip
 2025-06-16 d8b223e4 uxn_libretro.so.zip
+2025-12-20 d3db4c56 uzem_libretro.so.zip
+2025-12-20 79e1d2ff vaporspec_libretro.so.zip
 2025-12-19 9892eedd vbam_libretro.so.zip
 2025-12-19 295dc5f5 vba_next_libretro.so.zip
 2025-12-19 0be5c7bf vecx_libretro.so.zip
