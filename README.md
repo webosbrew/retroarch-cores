@@ -312,6 +312,13 @@ snes9x2005_plus
 
 stella2014
 
+squirreljme
+
+```
+add to nanocoat/CMakeLists.txt:
+target_link_libraries(SquirrelJME PRIVATE Threads::Threads)
+```
+
 tamalibretro
 
 tgbdual
@@ -374,13 +381,6 @@ samecdi
 ```
 3rdparty/genie/bin/linux/genie: 1: Syntax error: word unexpected (expecting ")")
 ```
-squirreljme
-pcsx2
-
-video_processor:
-```
-video_processor_v4l2.c:44:10: fatal error: libv4l2.h: No such file or directory
-```
 
 ## Cores Not Supported
 
@@ -402,6 +402,8 @@ ishiiruka (dolphin fork, not planned)
 
 kronos (does not support GLES)
 
+pcsx2 (no 32-bit ARM JIT)
+
 tempgba (archived, no longer developed, so use gpsp instead):
 ```
 arm-webos-linux-gnueabi-gcc.br_real: error: unrecognized command-line option ‘-mlong32’
@@ -409,6 +411,11 @@ gmake: *** [Makefile:65: zip.o] Error 1
 ```
 
 pcem (x86/64 only?)
+
+video_processor:
+```
+video_processor_v4l2.c:44:10: fatal error: libv4l2.h: No such file or directory
+```
 
 vitaquake3 (does not support GLES)
 
