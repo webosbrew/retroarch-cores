@@ -222,29 +222,29 @@ jumpnbump
 
 lowresnx
 
+mame (PR submitted https://github.com/libretro/mame/pull/543)
+
 mame2003_midway (needs https://github.com/libretro/mame2003_midway/pull/13 merged)
 
 mame2003_plus
 
 mame2010 (PR https://github.com/libretro/mame2010-libretro/pull/166)
 
-mednafen_psx_hw (PR https://github.com/libretro/beetle-psx-libretro/pull/937)
-
-mednafen_saturn
-
-melonds (PR https://github.com/libretro/melonDS/pull/207)
-
-mame (PR submitted https://github.com/libretro/mame/pull/543)
-
 mame2015 (PR submitted, plus waiting on https://github.com/libretro/mame2015-libretro/pull/98)
 
 mame2016 (PR https://github.com/libretro/mame2016-libretro/pull/65)
+
+mednafen_psx_hw (PR https://github.com/libretro/beetle-psx-libretro/pull/937)
+
+mednafen_saturn
 
 mednafen_snes
 
 mednafen_supafaust
 
 mednafen_ngp
+
+melonds (PR https://github.com/libretro/melonDS/pull/207)
 
 mesen
 
