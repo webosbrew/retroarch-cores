@@ -95,6 +95,12 @@ desmume2015 (PR https://github.com/libretro/desmume2015/pull/143)
 
 dinothawr (PR merged 12/12/2025)
 
+dosbox_core (PR https://github.com/realnc/dosbox-core/pull/69)
+```
+make deps
+make -j16
+```
+
 dosbox_pure
 
 dosbox_svn
@@ -355,11 +361,6 @@ x1
 
 ## Cores Needing Investigation
 
-dosbox_core:
-```
-checking whether we are cross compiling... configure: error: in `libretro-super/libretro-dosbox_core/libretro/deps_bin/flac_build'
-configure: error: cannot run C compiled programs.
-```
 easyrpg - needs liblcf?
 
 fsuae (requires glib adding to buildroot-nc4?)
