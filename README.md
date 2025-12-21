@@ -234,6 +234,8 @@ mednafen_saturn
 
 melonds (PR https://github.com/libretro/melonDS/pull/207)
 
+mame (PR submitted https://github.com/libretro/mame/pull/543)
+
 mame2015 (PR submitted, plus waiting on https://github.com/libretro/mame2015-libretro/pull/98)
 
 mame2016 (PR https://github.com/libretro/mame2016-libretro/pull/65)
@@ -363,12 +365,6 @@ easyrpg - needs liblcf?
 fsuae (requires glib adding to buildroot-nc4?)
 
 hbmame (broken, old core needs some TLC)
-
-mame (PR submitted https://github.com/libretro/mame/pull/543) - but fails linking with:
-
-```
-ld: BFD (GNU Binutils) 2.43.1 assertion fail elf32-arm.c:9889
-```
 
 openlara:
 ```
