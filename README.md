@@ -361,11 +361,15 @@ x1
 
 ## Cores Needing Investigation
 
-easyrpg - needs liblcf?
+easyrpg (needs inih)
 
-fsuae (requires glib adding to buildroot-nc4?)
+```
+cmake .. -DPLAYER_TARGET_PLATFORM=libretro -DBUILD_SHARED_LIBS=ON -DPLAYER_BUILD_LIBLCF=ON
+```
 
-hbmame (broken, old core needs some TLC)
+fsuae (GCC 14 build is broken)
+
+hbmame (needs a core rebase as broken cross compilation)
 
 openlara:
 ```
@@ -374,7 +378,7 @@ collect2: error: ld returned 1 exit status
 gmake: *** [Makefile:209: openlara_libretro.so] Error 1
 ```
 
-samecdi
+samecdi (also probably due to GCC 14 fixes needed)
 ```
 3rdparty/genie/bin/linux/genie: 1: Syntax error: word unexpected (expecting ")")
 ```
