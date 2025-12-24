@@ -349,6 +349,8 @@ yabasanshiro (PR merged - https://github.com/libretro/yabause/pull/316)
 
 vecx (PR https://github.com/libretro/libretro-vecx/pull/64)
 
+uae4arm (PR https://github.com/Chips-fr/uae4arm-rpi/pull/77) - pulled in
+
 uw8
 
 uzem
