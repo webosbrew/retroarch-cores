@@ -264,6 +264,8 @@ np2kai (PR - https://github.com/libretro/NP2kai/pull/63)
 
 oberon
 
+openlara (PR - https://github.com/libretro/OpenLara/pull/41)
+
 opera
 
 parallext (PR https://github.com/libretro/paraLLeXT/pull/5)
@@ -372,13 +374,6 @@ cmake .. -DPLAYER_TARGET_PLATFORM=libretro -DBUILD_SHARED_LIBS=ON -DPLAYER_BUILD
 fsuae (GCC 14 build is broken)
 
 hbmame (needs a core rebase as broken cross compilation)
-
-openlara:
-```
-/arm-webos-linux-gnueabi/bin/ld: ./main.o:(.bss+0xd6c): multiple definition of `__rglgen_glGenVertexArraysOES'; ./libretro-common/glsym/glsym_es2.o:(.bss+0x22c): first defined here
-collect2: error: ld returned 1 exit status
-gmake: *** [Makefile:209: openlara_libretro.so] Error 1
-```
 
 samecdi (also probably due to GCC 14 fixes needed)
 ```
