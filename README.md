@@ -15,9 +15,11 @@ Currently rebuilt on December 2025 with over **130 cores built**.
 
 ## Built with default script
 
-The following cores are built using the standard build script.
+The following cores are built using the standard libretro-super build script available from:
 
-`./libretro-build.sh`:
+(https://github.com/libretro/libretro-super)
+
+`libretro-super/libretro-build.sh`:
 
 52 core(s) successfully processed:
 	2048 bluemsx snes9x2005 chimerasnes clownmdemu fceumm fmsx
@@ -37,7 +39,8 @@ The following cores are built using the standard build script.
    ppsspp testgl test
 
 ## Built with webOS script
-Built using `./libretro-build-webos.sh`:
+
+Built using `libretro-super/libretro-build-webos.sh`:
 
 - parallel_n64
 - unx
@@ -351,8 +354,6 @@ yabasanshiro (PR merged - https://github.com/libretro/yabause/pull/316)
 
 vecx (PR https://github.com/libretro/libretro-vecx/pull/64)
 
-uae4arm (PR https://github.com/Chips-fr/uae4arm-rpi/pull/77) - pulled in
-
 uw8
 
 uzem
@@ -362,6 +363,12 @@ vaporspec
 xrick (PR https://github.com/libretro/xrick-libretro/pull/29)
 
 x1
+
+## Cores Downloaded Manually
+
+arduous (https://github.com/libretro/arduous)
+
+uae4arm (PR https://github.com/Chips-fr/uae4arm-rpi/pull/77)
 
 ## Cores Needing Investigation
 
