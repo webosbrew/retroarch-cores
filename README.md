@@ -368,6 +368,8 @@ x1
 
 arduous (https://github.com/libretro/arduous)
 
+pd777 (https://github.com/W88DodPECuThLOl/PD777)
+
 uae4arm (PR https://github.com/Chips-fr/uae4arm-rpi/pull/77)
 
 ## Cores Needing Investigation
