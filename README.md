@@ -366,6 +366,16 @@ x1
 
 ## Cores Downloaded Manually
 
+applewin (https://github.com/audetto/AppleWin/)
+
+```
+git submodule init
+git submodule update --recursive
+mkdir build && cd build
+cmake ..  -DCMAKE_BUILD_TYPE=Release -DBUILD_LIBRETRO=ON
+make -j$(getconf _NPROCESSORS_ONLN)
+```
+
 arduous (https://github.com/libretro/arduous)
 
 pd777 (https://github.com/W88DodPECuThLOl/PD777)
