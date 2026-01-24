@@ -1,7 +1,7 @@
 # RetroArch WebOS Cores (ARMv7)
 
 This repository hosts RetroArch cores compiled for WebOS (armv7).  
-Currently rebuilt on December 2025 with over **130 cores built**.
+Currently rebuilt on December 2025 with over **170 cores built**.
 
 ---
 
@@ -377,6 +377,8 @@ make -j$(getconf _NPROCESSORS_ONLN)
 ```
 
 arduous (https://github.com/libretro/arduous)
+
+gearlynx (https://github.com/drhelius/Gearlynx)
 
 pd777 (https://github.com/W88DodPECuThLOl/PD777)
 
