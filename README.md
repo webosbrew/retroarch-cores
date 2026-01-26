@@ -380,6 +380,8 @@ arduous (https://github.com/libretro/arduous)
 
 gearlynx (https://github.com/drhelius/Gearlynx)
 
+m2000 (https://github.com/p2000t/M2000)
+
 pd777 (https://github.com/W88DodPECuThLOl/PD777)
 
 uae4arm (PR https://github.com/Chips-fr/uae4arm-rpi/pull/77)
