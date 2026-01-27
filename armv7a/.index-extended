@@ -51,7 +51,7 @@
 2025-12-19 510a311a ffmpeg_libretro.so.zip
 2025-12-19 031639bc fixgb_libretro.so.zip
 2025-12-19 a6050e69 fixnes_libretro.so.zip
-2026-01-11 ba573af7 flycast_libretro.so.zip
+2026-01-28 01fe4cf4 flycast_libretro.so.zip
 2025-12-19 d372f8a2 fmsx_libretro.so.zip
 2025-12-19 673353ac freechaf_libretro.so.zip
 2025-12-19 3677c215 freeintv_libretro.so.zip
@@ -124,7 +124,7 @@
 2025-12-19 104fdc6d picodrive_libretro.so.zip
 2025-12-19 debabf46 pocketcdg_libretro.so.zip
 2025-12-19 e0635910 pokemini_libretro.so.zip
-2025-12-19 52ab1028 ppsspp_libretro.so.zip
+2026-01-27 bc91f3d5 ppsspp_libretro.so.zip
 2025-12-19 5c615c03 prboom_libretro.so.zip
 2025-12-19 eca983b4 prosystem_libretro.so.zip
 2025-12-19 861ef1d8 puae2021_libretro.so.zip
@@ -170,6 +170,6 @@
 2025-12-19 dee1e63c virtualjaguar_libretro.so.zip
 2025-12-19 cba3873e vitaquake2_libretro.so.zip
 2025-12-20 40175759 x1_libretro.so.zip
-2025-12-19 0606787e xrick_libretro.so.zip
+2026-01-27 4d86a9ba xrick_libretro.so.zip
 2025-12-19 877cef08 yabasanshiro_libretro.so.zip
 2025-12-19 b969cfa3 yabause_libretro.so.zip
