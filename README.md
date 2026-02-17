@@ -378,6 +378,8 @@ make -j$(getconf _NPROCESSORS_ONLN)
 
 arduous (https://github.com/libretro/arduous)
 
+b2 (https://github.com/zoltanvb/b2-libretro)
+
 gearlynx (https://github.com/drhelius/Gearlynx)
 
 m2000 (https://github.com/p2000t/M2000)
