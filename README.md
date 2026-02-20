@@ -378,6 +378,8 @@ make -j$(getconf _NPROCESSORS_ONLN)
 
 arduous (https://github.com/libretro/arduous)
 
+azahar (https://github.com/azahar-emu/azahar) - (PR https://github.com/azahar-emu/azahar/pull/1760)
+
 b2 (https://github.com/zoltanvb/b2-libretro)
 
 gearlynx (https://github.com/drhelius/Gearlynx)
