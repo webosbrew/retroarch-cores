@@ -376,6 +376,8 @@ cmake ..  -DCMAKE_BUILD_TYPE=Release -DBUILD_LIBRETRO=ON
 make -j$(getconf _NPROCESSORS_ONLN)
 ```
 
+amiberry (https://github.com/BlitterStudio/amiberry)
+
 arduous (https://github.com/libretro/arduous)
 
 azahar (https://github.com/azahar-emu/azahar) - (PR https://github.com/azahar-emu/azahar/pull/1760)
