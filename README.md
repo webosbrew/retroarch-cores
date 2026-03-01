@@ -66,6 +66,8 @@ bluemsx
 
 bnes (PR https://github.com/libretro/bsnes-libretro/pull/48)
 
+boom3 (PR https://github.com/libretro/boom3/pull/14)
+
 bsnes2014_performance
 
 bsnes_hd_beta (PR https://github.com/DerKoun/bsnes-hd/pull/141)
@@ -412,8 +414,6 @@ samecdi (also probably due to GCC 14 fixes needed)
 ## Cores Not Supported
 
 blastem (this is x86 ONLY at present)
-
-boom3 (does not support GLES)
 
 dolphin/:
 Need a 64-bit compile which is feasible however there would be no graphics as graphics libs provided
