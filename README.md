@@ -220,6 +220,8 @@ gong
 
 gpsp (PR https://github.com/libretro/gpsp/pull/278)
 
+hbmame (PR https://github.com/libretro/hbmame-libretro/pull/9)
+
 holani:
 ```
 export CARGO_TARGET_ARMV7_UNKNOWN_LINUX_GNUEABI_LINKER="$SDK_PATH/bin/arm-webos-linux-gnueabi-gcc"
@@ -403,8 +405,6 @@ cmake .. -DPLAYER_TARGET_PLATFORM=libretro -DBUILD_SHARED_LIBS=ON -DPLAYER_BUILD
 ```
 
 fsuae (GCC 14 build is broken)
-
-hbmame (needs a core rebase as broken cross compilation)
 
 samecdi (also probably due to GCC 14 fixes needed)
 ```
