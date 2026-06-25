@@ -3,6 +3,12 @@
 This repository hosts RetroArch cores compiled for WebOS (armv7).  
 Currently rebuilt on December 2025 with over **170 cores built**.
 
+There is also now experimental aarch64 cores. It requires the following IPK installed:
+https://github.com/webosbrew/webos-bridge-64to32/releases and a aarch64 retroarch available here:
+https://github.com/webosbrew/RetroArch/releases.
+
+Most users should stick to the armv7a cores for now unless you want to give feedback on aarch64.
+
 ---
 
 ## Table of Contents
