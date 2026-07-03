@@ -398,6 +398,28 @@ gearlynx (https://github.com/drhelius/Gearlynx)
 
 m2000 (https://github.com/p2000t/M2000)
 
+Native32Emu (https://github.com/jiangxincode/Native32Emu)
+
+```
+export CARGO_TARGET_ARMV7_UNKNOWN_LINUX_GNUEABI_LINKER="arm-webos-linux-gnueabi-gcc"
+export CC_armv7_unknown_linux_gnueabi="arm-webos-linux-gnueabi-gcc"
+export AR_armv7_unknown_linux_gnueabi="arm-webos-linux-gnueabi-ar"
+
+cargo build -p native32emu-libretro --release --target armv7-unknown-linux-gnueabi
+cd target/armv7-unknown-linux-gnueabi/release
+mv libnative32emu.so native32emu_libretro.so
+```
+
+```
+export CARGO_TARGET_AARCH64_UNKNOWN_LINUX_GNU_LINKER="aarch64-webos-linux-gnu-gcc"
+export CC_aarch64_unknown_linux_gnu="aarch64-webos-linux-gnu-gcc"
+export AR_aarch64_unknown_linux_gnu="aarch64-webos-linux-gnu-ar"
+
+cargo build -p native32emu-libretro --release --target aarch64-unknown-linux-gnu
+cd target/aarch64-unknown-linux-gnu/release
+mv libnative32emu.so native32emu_libretro.so
+```
+
 pd777 (https://github.com/W88DodPECuThLOl/PD777)
 
 uae4arm (PR https://github.com/Chips-fr/uae4arm-rpi/pull/77)
