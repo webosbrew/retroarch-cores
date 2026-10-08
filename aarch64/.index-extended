@@ -14,13 +14,15 @@
 2026-08-17 2f5741c7 bsnes_mercury_accuracy_libretro.so.zip
 2026-08-17 8e4036b8 bsnes_mercury_balanced_libretro.so.zip
 2026-08-17 f8780cfa bsnes_mercury_performance_libretro.so.zip
+2026-10-08 909b15c6 cemu_libretro.so.zip
 2026-08-17 816773e4 chimerasnes_libretro.so.zip
 2026-08-17 518bb7bc clownmdemu_libretro.so.zip
 2026-08-17 08110281 desmume2015_libretro.so.zip
 2026-08-17 e67c81c2 desmume_libretro.so.zip
 2026-08-17 d83c892b dinothawr_libretro.so.zip
-2026-09-12 650c44d2 dolphin_libretro.so.zip
+2026-10-08 d68a7bd9 dolphin_libretro.so.zip
 2026-08-17 2f69bd7a dosbox_libretro.so.zip
+2026-10-08 448e5c8f emuscv_libretro.so.zip
 2026-08-17 6e2abf6c emux_chip8_libretro.so.zip
 2026-08-17 5e62efc4 emux_gb_libretro.so.zip
 2026-08-17 821aa863 emux_nes_libretro.so.zip
@@ -93,7 +95,9 @@
 2026-08-17 43138ff4 openlara_libretro.so.zip
 2026-08-21 21074a09 opera_libretro.so.zip
 2026-08-17 6be9e85d parallel_n64_libretro.so.zip
+2026-10-08 cf23abfa pcee2_libretro.so.zip
 2026-08-17 9d30c9ec pcsx_rearmed_libretro.so.zip
+2026-10-08 035929ef pcsx2_libretro.so.zip
 2026-08-17 fe59c887 pd777_libretro.so.zip
 2026-08-17 437d8902 picodrive_libretro.so.zip
 2026-08-17 5b441a0a pokemini_libretro.so.zip
@@ -107,6 +111,7 @@
 2026-08-17 81e5905d race_libretro.so.zip
 2026-08-17 fc08b35f reminiscence_libretro.so.zip
 2026-08-17 98e580ba retro8_libretro.so.zip
+2026-10-08 335b2eb7 rustynes_libretro.so.zip
 2026-08-17 d283f533 sameboy_libretro.so.zip
 2026-08-17 9f1ffb4b sameduck_libretro.so.zip
 2026-08-17 2761afbc scummvm_libretro.so.zip
