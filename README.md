@@ -434,14 +434,9 @@ cmake .. -DPLAYER_TARGET_PLATFORM=libretro -DBUILD_SHARED_LIBS=ON -DPLAYER_BUILD
 
 fsuae (GCC 14 build is broken)
 
-samecdi (also probably due to GCC 14 fixes needed)
-```
-3rdparty/genie/bin/linux/genie: 1: Syntax error: word unexpected (expecting ")")
-```
-
 ## Cores Not Supported
 
-blastem (this is x86 ONLY at present)
+blastem (this is x86/arm64 ONLY at present)
 
 dolphin/:
 Need a 64-bit compile which is feasible however there would be no graphics as graphics libs provided
